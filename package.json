@@ -1,0 +1,20 @@
+{
+  "name": "www",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "npm run build": "echo \"no build specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damato-design/www.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/damato-design/www/issues"
+  },
+  "homepage": "https://github.com/damato-design/www#readme"
+}
