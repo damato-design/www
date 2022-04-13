@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "npm run build": "echo \"no build specified\""
+    "build": "nunjucks index.njk -p templates -o _site/"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/damato-design/www/issues"
   },
-  "homepage": "https://github.com/damato-design/www#readme"
+  "homepage": "https://github.com/damato-design/www#readme",
+  "devDependencies": {
+    "nunjucks": "^3.2.3",
+    "nunjucks-cli": "^1.0.0"
+  }
 }
