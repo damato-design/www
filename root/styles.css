@@ -79,10 +79,10 @@ header strong {
   background: black;
   padding: 0.125em 0.25em;
   display: inline-block;
-  transform: skew(-12deg, 1deg);
   color: white;
   margin: 0.125em 0;
-  box-shadow: 0.125em 0.125em hotpink;
+  filter: drop-shadow(0.125em 0.125em hotpink);
+  transform: skew(-12deg, 1deg);
 }
 
 section {
@@ -100,4 +100,27 @@ section a {
   color: currentColor;
   font-weight: bolder;
   text-decoration-color: hotpink;
+  text-underline-offset: .1em;
+  position: relative;
+}
+
+section a:before {
+  content: attr(href);
+  position: absolute;
+  bottom: calc(100% - .5em);
+  left: 50%;
+  background: black;
+  color: white;
+  padding: .5em .5em 1em;
+  font-size: 1rem;
+  transform: translateY(-1em) translateX(-50%) skew(-12deg, 1deg);
+  opacity: 0;
+  transition: .218s .218s ease;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 55% 75%, 50% 100%, 45% 75%, 0% 75%);
+  pointer-events: none;
+}
+
+section a:hover:before {
+  opacity: 1;
+  transform: translateX(-50%) skew(-12deg, 1deg);
 }
