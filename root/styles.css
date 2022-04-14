@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background-color: #fdd900;
+  background-image: url(./yellow-bkgd-top.jpg), url(./yellow-bkgd-bottom.jpg);
+  background-repeat: no-repeat;
+  background-position: left min(0px, calc(100vw - 800px)), 120% bottom;
+  background-size: 300px, min(100vw, 600px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

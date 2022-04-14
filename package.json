@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "nunjucks index.njk -p templates -o _site/"
+    "build": "npm run copy && nunjucks index.njk -p templates -o _site/",
+    "copy": "mkdir -p _site && cp -r root/. _site"
   },
   "repository": {
     "type": "git",
