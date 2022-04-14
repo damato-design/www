@@ -102,6 +102,7 @@ section a {
   text-decoration-color: hotpink;
   text-underline-offset: .1em;
   position: relative;
+  white-space: nowrap;
 }
 
 section a:before {
