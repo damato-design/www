@@ -4,16 +4,19 @@
     {% include "head.njk" %}
   </head>
   <body>
-   <header>
-      <div class="sticky">
-        {% include "ds-house.svg" %}
-      </div>
-      <h1>damato.design</h1>
-      <h2>Where design <strong>stops being polite</strong>
-      <br/>and <strong>starts getting usable</strong></h2>
-   </header>
-   <section>
-     {% include "section.njk" %}
-   </section>
+    <main id="main" class="max-content">
+      <header>
+        <div class="sticky">
+          <dsh-logo></dsh-logo>
+        </div>
+        <h1>damato<wbr>.design</h1>
+        <h2>Where design <strong>stops being polite</strong>
+        <br/>and <strong>starts getting usable</strong></h2>
+      </header>
+      <section id="content">
+        {% include "section.njk" %}
+      </section>
+      <site-attribution></site-attribution>
+    </main>
   </body>
 </html>
