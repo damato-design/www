@@ -58,4 +58,5 @@ a {
 
 footer {
   margin-bottom: var(--space--away);
+  padding-bottom: var(--space--away);
 }
