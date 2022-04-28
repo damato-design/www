@@ -18,9 +18,9 @@ header strong {
   background: var(--box_standard_foreground-color);
   padding: 0.125em 0.25em;
   display: inline-block;
-  color: var(--box_standard_background-color);
+  color: white;
   margin: 0.125em 0;
-  filter: brightness(10) drop-shadow(0.125em 0.125em var(--feedback_standard_surface-color));
+  filter: drop-shadow(0.125em 0.125em var(--feedback_standard_surface-color));
   transform: skew(-12deg, 1deg);
 }
 
