@@ -1,0 +1,14 @@
+# Subdomains of damato.design shown as cards on the hub, in this order
+# (e.g. `blog` -> https://blog.damato.design). Each homepage is fetched at
+# build time and its Open Graph tags (og:title, og:description, og:image)
+# fill the card.
+
+# TODO: replace with the final list of damato.design sites.
+- donnie
+- jennifer
+- resume
+- blog
+- system
+- typography
+- code
+- mcp

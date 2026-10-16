@@ -1,7 +1,6 @@
-
 body {
   font-family: Catamaran;
-  background-image: url(./bg.jpeg);
+  background-image: url(../assets/bg.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -57,4 +56,15 @@ section {
   border: 1px solid #505050;
   padding: 2rem;
   backdrop-filter: blur(8px);
+}
+
+.sites {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }

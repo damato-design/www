@@ -1,25 +1,29 @@
 {
   "name": "www",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "description": "Hub for sites under the damato.design domain",
   "scripts": {
-    "build": "npm run copy && nunjucks index.njk -p templates -o _site/",
-    "copy": "mkdir -p _site && cp -r root/. _site"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/damato-design/www.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/damato-design/www/issues"
   },
   "homepage": "https://github.com/damato-design/www#readme",
-  "devDependencies": {
-    "nunjucks": "^3.2.3",
-    "nunjucks-cli": "^1.0.0"
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "dependencies": {
+    "astro": "^7.4.0",
+    "yaml": "^2.9.1"
   }
 }
