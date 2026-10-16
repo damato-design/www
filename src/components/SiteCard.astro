@@ -33,14 +33,24 @@ const { card } = Astro.props;
 <style>
   .card {
     list-style: none;
-    border: 1px solid #505050;
+    border: 3px solid var(--navy);
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--cream) 85%, transparent);
     backdrop-filter: blur(8px);
-    transition: border-color 150ms;
+    transition: box-shadow 150ms, translate 150ms;
   }
 
   .card:hover,
   .card:focus-within {
-    border-color: #00b4ff;
+    box-shadow: var(--stripes-shadow);
+    translate: -0.5rem -0.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card {
+      transition: none;
+    }
   }
 
   a {
@@ -50,9 +60,20 @@ const { card } = Astro.props;
     text-decoration: none;
   }
 
+  a:focus-visible {
+    outline: none;
+  }
+
   .media {
     aspect-ratio: 1200 / 630;
-    background: linear-gradient(135deg, #623cc8, #171044);
+    border-bottom: 3px solid var(--navy);
+    background: linear-gradient(
+      var(--navy) 0 20%,
+      var(--teal) 20% 40%,
+      var(--mustard) 40% 60%,
+      var(--orange) 60% 80%,
+      var(--red) 80%
+    );
     overflow: hidden;
   }
 
@@ -69,12 +90,14 @@ const { card } = Astro.props;
 
   .hostname {
     font-size: 0.8em;
-    color: #00b4ff;
+    font-weight: 700;
+    color: var(--teal-dark);
   }
 
   h3 {
     margin: 0.25em 0 0;
-    font-size: 1.25em;
+    font-size: 1.35em;
+    font-weight: 700;
     line-height: 1.2;
   }
 
@@ -82,6 +105,6 @@ const { card } = Astro.props;
     margin: 0.5em 0 0;
     font-size: 0.9em;
     line-height: 1.4;
-    opacity: 0.8;
+    opacity: 0.85;
   }
 </style>

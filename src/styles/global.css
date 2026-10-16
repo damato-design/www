@@ -1,67 +1,149 @@
+:root {
+  /* Palette sampled from vintage-bg.jpeg */
+  --cream: #fde7d9;
+  --navy: #15374b;
+  --teal: #078a8b;
+  --teal-dark: #00686a;
+  --mustard: #e9b444;
+  --orange: #e1923b;
+  --red: #e35f47;
+
+  --font-display: Fraunces, 'Cooper Black', Georgia, serif;
+  --font-body: Catamaran, system-ui, sans-serif;
+
+  /* Stacked offset bands that echo the stripes in the background */
+  --stripes-shadow:
+    0.25rem 0.25rem 0 var(--teal),
+    0.5rem 0.5rem 0 var(--mustard),
+    0.75rem 0.75rem 0 var(--orange),
+    1rem 1rem 0 var(--red);
+}
+
 body {
-  font-family: Catamaran;
-  background-image: url(../assets/bg.jpeg);
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  background-image: url(../assets/vintage-bg.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-color: black;
+  background-attachment: fixed;
   min-height: 100dvh;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: var(--navy);
   font-size: clamp(.75rem, 3vw, 1.2rem);
 }
 
 a {
   color: inherit;
-  text-decoration-color: #00b4ff;
+  text-decoration-color: var(--red);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
 }
 
 h1 {
   font-size: 5em;
+  font-weight: 900;
   margin-block: .3em;
-  line-height: .8;
+  line-height: .9;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   margin: 0;
   font-size: 2em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+header h2 {
+  font-family: var(--font-body);
+  font-size: 1.6em;
+  font-weight: 500;
 }
 
 #main {
   max-width: 600px;
   margin-inline: auto;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem;
 }
 
 header {
   text-align: right;
+  width: fit-content;
   margin-left: auto;
+  padding: 1.5rem 2rem 2rem;
+  background: var(--cream);
+  border: 3px solid var(--navy);
+  border-radius: 1.5rem;
+  box-shadow: var(--stripes-shadow);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+header::before {
+  content: '';
+  background-image: url(../assets/vintage-bg.jpeg);
+  background-size: 400%;
+  background-repeat: no-repeat;
+  background-position: 35% 80%;
+  aspect-ratio: 1;
+  display: block;
+  position: absolute;
+  width: 40%;
+  top: 0;
+  left: 0;
+}
+
+header :where(h1, h2) {
+  isolation: isolate;
+}
+
+header h1 {
+  margin-block: 0 .35em;
+  font-size: clamp(2.5em, 8vw, 5em);
+   -webkit-text-stroke: 12px var(--cream);
+  paint-order: stroke fill;
+}
+
+header h2 {
+  background: var(--cream);
+  font-size: 1em;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 header strong {
-  background: linear-gradient(90deg, #623cc8, #171044);
-  padding: 0 0.25em;
-  display: inline-block;
-  color: white;
-  margin: 0.125em 0;
-  filter: drop-shadow(0.125em 0.125em #192264);
-  transform: skew(-12deg, 1deg)
+  font-weight: 700;
+  text-decoration: underline var(--mustard) 0.2em;
+  text-underline-offset: 0.1em;
+  text-decoration-skip-ink: none;
 }
 
 section {
   font-size: 1.2em;
   margin-block: 4vw;
-  border: 1px solid #505050;
+  border: 3px solid var(--navy);
+  border-radius: 1.25rem;
   padding: 2rem;
+  background: color-mix(in srgb, var(--cream) 85%, transparent);
   backdrop-filter: blur(8px);
 }
 
 .sites {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 4rem;
